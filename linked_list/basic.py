@@ -47,6 +47,27 @@ class LinkedList:
             prev = temp
             temp = temp.next
 
+    def _getLength(self, node):
+        if not node:
+            return 0
+        else:
+            return 1 + self._getLength(node.next)
+    
+    def getLn(self):
+        return self._getLength(self.head)
+    
+    def _search(self, node, key):
+        if not node:
+            return False
+        elif node.data == key:
+            return True
+        else:
+            return self._search(node.next, key)
+
+    def search(self, key):
+        return self._search(self.head, key)
+
+
     def printlist(self):
         temp = self.head
         while temp!=None:
@@ -65,7 +86,9 @@ if __name__=='__main__':
 
     llist.printlist()  
 
-    llist.deleteNode(3)
+    #llist.deleteNode(3)
     
-
-    llist.printlist()        
+    print(llist.getLn())
+    #llist.printlist()
+    # 
+    print(llist.search(12))       
