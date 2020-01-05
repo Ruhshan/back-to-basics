@@ -28,6 +28,16 @@ class LinkedList:
             newNode.next = self.head
             self.head = newNode
 
+    def insertAfter(self, nodeVal, data):
+        temp = self.head
+        while temp!=None:
+            if temp.data == nodeVal:
+                newNode = Node(data)
+                newNode.next = temp.next
+                temp.next = newNode
+                break  
+            temp=temp.next
+        
 
     def printlist(self):
         temp = self.head
@@ -43,6 +53,7 @@ if __name__=='__main__':
     llist.append(2)
     llist.append(3)
     llist.push(0)
+    llist.insertAfter(3,7)
     
 
     llist.printlist()        
