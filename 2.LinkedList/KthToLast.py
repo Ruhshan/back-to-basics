@@ -27,17 +27,21 @@ class LinkedList:
             print(temp.data)
             temp=temp.next
     
-    def deleteDuplicatesWithBuffer(self):
-        itemCount = {}
-        temp = self.head
-        while temp!=None:
-            if itemCount.get(temp.data)==None:
-                itemCount[temp.data]=1
-                prev=temp
-            else:
-                itemCount[temp.data]+=1    
-                prev.next = temp.next
-            temp = temp.next
+    def getKthTolast(self, k):
+        p1 = self.head
+        p2 = self.head
+
+        for i in range(k):
+            if p2 == None:
+                return None
+            p2 = p2.next
+        
+
+        while p2.next!=None:
+            p1=p1.next
+            p2=p2.next
+        return p1.data
+        
 
 
 
@@ -46,10 +50,7 @@ if __name__=='__main__':
     llist.append(1)
     llist.append(2)
     llist.append(3)
-    llist.append(2)
-    llist.append(1)
     llist.append(4)
     llist.append(5)
-    llist.deleteDuplicatesWithBuffer()
 
-    llist.printlist()
+    print(llist.getKthTolast(4))
