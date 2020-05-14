@@ -39,7 +39,7 @@ def sumList(list1, list2):
 
         total = temp1.data + temp2.data + carry  
         res = total % 10
-        carry = int( total / 10) 
+        carry = int( total / 10)
 
         summedList.append(res)
 
