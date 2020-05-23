@@ -15,7 +15,6 @@ class KStack:
         self.top[stk] = self.free
         
         self.free = next_tmp
-
     
     def pop(self, stk):
         result = self.array[self.top[stk]]
