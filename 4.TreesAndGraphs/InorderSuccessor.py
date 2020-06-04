@@ -20,6 +20,8 @@ def findMinInRight(node):
 
 def findRightParent(node):
     parent = node.parent
+    if parent == None:
+        return None
     if parent.left!=None and parent.left.data == node.data:
         return parent
     else:
@@ -62,7 +64,7 @@ if __name__ == "__main__":
     node26 = Node(26, node18)
     node18.right = node26
 
-    print(findSuccessor(node13).data)
+    print(findSuccessor(node26).data)
 
 
 
