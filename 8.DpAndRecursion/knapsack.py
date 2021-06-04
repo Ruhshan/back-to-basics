@@ -7,8 +7,7 @@ def knapSack(capacity, wt, prof):
             if i == 0 or j == 0:
                 table[i][j] = 0
             elif wt[i - 1] <= j:
-                table[i][j] = max(prof[i - 1]
-                                  + table[i - 1][j - wt[i - 1]], table[i - 1][j])
+                table[i][j] = max(prof[i - 1]+ table[i - 1][j - wt[i - 1]], table[i - 1][j])
             else:
                 table[i][j] = table[i - 1][j]
 
@@ -33,7 +32,7 @@ def find_included_items(table, weights, capacity):
 
 
 if __name__=="__main__":
-    weights = [3,4,6,5]
-    profits = [2,3,1,4]
-    capacity = 6
+    weights = [0,1,2,3,4]
+    profits = [2,7,9,3,1]
+    capacity = 100
     print(knapSack(capacity, weights, profits))
